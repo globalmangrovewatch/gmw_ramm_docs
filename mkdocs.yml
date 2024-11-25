@@ -8,7 +8,7 @@ nav:
   - Stage 2: stage2.md
 
 plugins:
-  - plantuml_markdown
+  - plantuml-markdown
   - i18n
 
 theme: material
