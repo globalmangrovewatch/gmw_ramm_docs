@@ -1,4 +1,5 @@
 site_name: Radar Alerting for Mangrove Monitoring
+site_url: https://www.globalmangrovewatch.github.io/gmw_ramm_docs/
 
 nav:
   - Home: index.md
