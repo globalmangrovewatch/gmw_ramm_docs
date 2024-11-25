@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "gmw-ramm-docs"
+version = "0.1.0"
+description = "Online Documentation for Global Mangrove Watch: Radar Alerts for Mangrove Monitoring (RAMM)"
+authors = ["bsmith <bsmith@hatfieldgroup.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mkdocs = "^1.6.1"
+plantuml-markdown = "^3.10.4"
+mkdocs-material = "^9.5.46"
+mkdocs-static-i18n = "^1.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
