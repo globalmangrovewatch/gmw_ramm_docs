@@ -27,8 +27,8 @@
   user -> WebPortal
   WebPortal -> API : HTTP POST Request
   API -> WebPortal : HTTP 201: Accepted or\n HTTP 400: Bad Request
-  API -> JobManager : deploys
-  JobManager --> "Stage1 Queue"
+  API -> JobManager : deploys (if 201)
+  JobManager --> "Stage1 Queue" : populates
   "Stage1 Queue" --> KEDAStage1ScaledJob : triggers
   KEDAStage1ScaledJob --> Stage1ScaledWorkers1 : scales up
   Stage1ScaledWorkers1 .. Stage1ScaledWorkersN
