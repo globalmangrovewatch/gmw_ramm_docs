@@ -7,8 +7,8 @@ nav:
   - Stage 1: stage1.md
   - Stage 2: stage2.md
 
-# plugins:
-#   - plantuml_markdown
-#   - i18n
+plugins:
+  - plantuml_markdown
+  - i18n
 
 theme: material
