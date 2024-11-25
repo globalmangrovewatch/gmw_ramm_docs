@@ -23,6 +23,6 @@ jobs:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
-            mkdocs-material-
+            mkdocs-material-${{ env.cache_id }}
       - run: pip install mkdocs-material plantuml-markdown mkdocs-static-i18n
       - run: mkdocs gh-deploy --force
