@@ -49,8 +49,4 @@
   "Stage2 Queue" --> Stage2ScaledWorkersN : consumed by
   Stage2ScaledWorkersN --> "Blob Storage" : uploads output
 
-
-
-
-
 @enduml
