@@ -1,4 +1,4 @@
-# Radar Alerting for Mangrove Monitoring (RAMM)
+# Radar Alerts for Mangrove Monitoring (RAMM)
 
 ![company_logos](public/hatfield-esa-wetlandsint-abers.png)
 
@@ -17,7 +17,7 @@ RAMM is a dynamic, event-driven, pipeline that leverages
 Sentinel-1 Sythnetic Aperature Radar (SAR) information to
 complement the existing and running optical satellite
 pipeline by Global Mangfove Watch (GMW).
-Optical satellite imagery #has been able to provide timely
+Optical satellite imagery has been able to provide timely
 alerting for mangrove deforestation alerting, however, it
 has a drawback when the monitored area is cloud covered.
 SAR has the ability to penetrate clouds and detect these
