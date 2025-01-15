@@ -2,9 +2,6 @@ site_name: Radar Alerting for Mangrove Monitoring
 site_url: https://www.globalmangrovewatch.github.io/gmw_ramm_docs/
 
 nav:
-  - Home: index.md
-  - System Architecture: system_architecture.md
-  - Stage 1: stage1.md
-  - Stage 2: stage2.md
+  - RAMM: index.md
 
 theme: material
