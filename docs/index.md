@@ -104,21 +104,14 @@ their latest global mangrove extent map and Sentinel-1 data.
 
 The RAMM platform is built on the following technologies:
 
-- [CREODIAS](https://creodias.eu/)
-  - The cloud-based platform that provides access to Copernicus data.
-- [S3](https://aws.amazon.com/s3/)
-  - The object storage service used to store the pipeline outputs.
-- [OpenStack](https://www.openstack.org/)
-  - The underlying technology offered by CloudFerro for CREODIAS.
-- [REST API](https://restfulapi.net/)
-  - The API is used to interact with the platform.
-- [RabbitMQ](https://www.rabbitmq.com/)
-  - The message broker used to manage the pipeline.
-  - [AMQP](https://www.amqp.org/) is the protocol used by RabbitMQ.
-- [Docker](https://www.docker.com/)
-  - The containerization technology used to package the pipeline.
-- [KEDA](https://keda.sh/)
-  - The Kubernetes Event-Driven Autoscaler used to scale the pipeline.
+- [CREODIAS](https://creodias.eu/): The cloud-based platform that provides access to Copernicus data.
+- [S3](https://aws.amazon.com/s3/): The object storage service used to store the pipeline outputs.
+- [OpenStack](https://www.openstack.org/): The underlying technology offered by CloudFerro for CREODIAS.
+- [REST API](https://restfulapi.net/): The API is used to interact with the platform.
+- [RabbitMQ](https://www.rabbitmq.com/): The message broker used to manage the pipeline.
+- [AMQP](https://www.amqp.org/) is the protocol used by RabbitMQ.
+- [Docker](https://www.docker.com/): The containerization technology used to package the pipeline.
+- [KEDA](https://keda.sh/): The Kubernetes Event-Driven Autoscaler used to scale the pipeline.
 
 The platform is designed to be scalable and flexible to allow for
 the analysis of the entire global mangrove extent.
