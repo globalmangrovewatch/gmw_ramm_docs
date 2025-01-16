@@ -144,5 +144,3 @@ is scalable, efficient, and concurrent.
 >
 &copy; 2025 Hatfield Consultants LLP
 </div>
-
-```
