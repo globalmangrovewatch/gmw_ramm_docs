@@ -2,38 +2,33 @@
 
 ![company_logos](public/hatfield-esa-wetlandsint-abers.png)
 
-
-
-- Dr. Andrew Dean - [Hatfield Consultants LLP](https://hatfieldgroup.com)
-- [Benjamin Smith](https://github.com/bnjam) - [Hatfield Consultants LLP](https://hatfieldgroup.com)
-- [Pete Bunting](https://github.com/petebunting) - [Aberystwyth University](https://www.aber.ac.uk/en/)
-- [Dr. Victor Tang](https://github.com/weigangtang) - [Hatfield Consultants LLP](https://hatfieldgroup.com)
-- [Lammert Hildarides](https://github.com/lhilarides) - [Wetlands International](https://www.wetlands.org)
-- Frank Marking Seifert - [European Space Agency (ESA)](https://www.esa.int)
-
----
-
 - [Radar Alerts for Mangrove Monitoring (RAMM)](#radar-alerts-for-mangrove-monitoring-ramm)
-- [RAMM](#ramm)
   - [Platform](#platform)
   - [Demonstration Areas](#demonstration-areas)
     - [Guinea Bissau](#guinea-bissau)
     - [North Kalimantan, Indonesia](#north-kalimantan-indonesia)
-  - [Mangrove Alerting Algorithms](#mangrove-alerting-algorithms)
+  - [Mangrove Loss Alerting Algorithms](#mangrove-loss-alerting-algorithms)
   - [Platform Architecture](#platform-architecture)
 
-
-# RAMM
 
 RAMM is a dynamic, event-driven, pipeline that leverages
 Sentinel-1 Sythnetic Aperature Radar (SAR) information to
 complement the existing and running optical satellite
-pipeline by [Global Mangfove Watch (GMW)](https://www.globalmangrovewatch.org/).
+pipeline by [Global Mangrove Watch (GMW)](https://www.globalmangrovewatch.org/).
 Optical satellite imagery has been able to provide timely
 alerting for mangrove deforestation alerting, however, it
 has a drawback when the monitored area is cloud covered.
 SAR has the ability to penetrate clouds and detect these
 possible missed events.
+
+- Andrew Dean - [Hatfield Consultants](https://hatfieldgroup.com)
+- [Benjamin Smith](https://github.com/bnjam) - [Hatfield Consultants](https://hatfieldgroup.com)
+- [Pete Bunting](https://github.com/petebunting) - [Aberystwyth University](https://www.aber.ac.uk/en/)
+- [Dr. Victor Tang](https://github.com/weigangtang) - [Hatfield Consultants](https://hatfieldgroup.com)
+- [Lammert Hildarides](https://github.com/lhilarides) - [Wetlands International](https://www.wetlands.org)
+- Frank Marking Seifert - [European Space Agency (ESA)](https://www.esa.int)
+
+---
 
 ## Platform
 
@@ -70,7 +65,7 @@ for mangrove change in Africa.
 North Kalimantan is a province in Indonesia that is
 located on the island of Borneo.
 
-## Mangrove Alerting Algorithms
+## Mangrove Loss Alerting Algorithms
 
 To detect mangrove deforestation, RAMM implements a two-stage
 approach executed on a recurring basis using Sentinel-1 SAR
@@ -81,9 +76,10 @@ iterates through the following stages:
 1. **Change Detection**: The first stage is to detect change
    in the SAR data. This is done by gathering the previous
    months acquisitions over the provided target area.
-   The acquisitions are stacked and suspect pixels are
+   The acquisitions are stacked and potential mangrove loss pixels are
    identified using a tuned threshold.
-   The suspect pixels are then compared to the same month of the 
+   The potential mangrove loss pixels pixels are then compared 
+   to the same month of the 
    previous year's median composite and classifying as possible
    alerts if the absolute difference is greater than a threshold.
    Outputs are then written to BLOB Storage. 
@@ -135,5 +131,5 @@ is scalable, efficient, and concurrent.
         display: flex;
         "
 >
-&copy; 2025 Hatfield Consultants LLP
+&copy; 2025 Hatfield Consultants
 </div>
