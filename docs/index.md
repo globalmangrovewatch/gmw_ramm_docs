@@ -2,6 +2,8 @@
 
 ![company_logos](public/hatfield-esa-wetlandsint-abers.png)
 
+Global Mangrove Watch (GMW) publishes annual global data of the extent of mangrove forests and since 2019 a mangrove deforestation alert system using Copernicus Sentinel-2 imagery (Bunting et al. 2023). The optical image alert system is limited by cloud cover, often delaying the detection of mangrove loss and diminishing its impact for mangrove conservation. Sentinel-1 Synthetic Aperture Radar (SAR) penetrates cloud cover and offers potential to provide consistent monthly alerts. However, in coastal regions analytical methods must address the complex interaction of the SAR signal with mangrove canopy and water.
+
 - [Radar Alerts for Mangrove Monitoring (RAMM)](#radar-alerts-for-mangrove-monitoring-ramm)
   - [Platform](#platform)
   - [Demonstration Areas](#demonstration-areas)
@@ -10,23 +12,18 @@
   - [Mangrove Loss Alerting Algorithms](#mangrove-loss-alerting-algorithms)
   - [Platform Architecture](#platform-architecture)
 
-
-RAMM is a dynamic, event-driven, pipeline that leverages
-Sentinel-1 Sythnetic Aperature Radar (SAR) information to
-complement the existing and running optical satellite
-pipeline by [Global Mangrove Watch (GMW)](https://www.globalmangrovewatch.org/).
-Optical satellite imagery has been able to provide timely
-alerting for mangrove deforestation alerting, however, it
-has a drawback when the monitored area is cloud covered.
-SAR has the ability to penetrate clouds and detect these
-possible missed events.
+RAMM is implemented over the [Global Mangrove Watch (GMW)](https://www.globalmangrovewatch.org/) baseline extent (currently 2020) in a two stage per pixel approach, designed to maximize efficiency. 
+The first stage is a simple rule-based approach based on thresholding of backscatter value and difference from the previous year’s median backscatter value, which reduces effects of seasonal and tidal variability and radar speckle. 
+The thresholds are designed to minimize false negatives (i.e. capture all possible mangrove loss).
+The second stage is a 1-Dimensional Convolutional Neural Network (1D-CNN) that is trained on a dataset of confirmed alerts and false positives (both produced by GMW).
+The integration of false positives into the training dataset encourages the model to recognise and flag falsely identified alerts provided by the rule-based first stage as deep learning algorithms are known to extract fine-grained patterns between domain distributions. 
 
 - Andrew Dean - [Hatfield Consultants](https://hatfieldgroup.com)
 - [Benjamin Smith](https://github.com/bnjam) - [Hatfield Consultants](https://hatfieldgroup.com)
 - [Pete Bunting](https://github.com/petebunting) - [Aberystwyth University](https://www.aber.ac.uk/en/)
 - [Dr. Victor Tang](https://github.com/weigangtang) - [Hatfield Consultants](https://hatfieldgroup.com)
 - [Lammert Hildarides](https://github.com/lhilarides) - [Wetlands International](https://www.wetlands.org)
-- Frank Marking Seifert - [European Space Agency (ESA)](https://www.esa.int)
+- Frank Martin Seifert - [European Space Agency (ESA)](https://www.esa.int)
 
 ---
 
