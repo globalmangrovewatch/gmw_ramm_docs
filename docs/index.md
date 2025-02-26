@@ -9,29 +9,28 @@ The consortium combines the expertise, experience, and leadership positions of t
   -	DGES is the technical lead for GMW and provides deep scientific and technical expertise in remote sensing, mangrove assessment and monitoring, and computer science with a demonstrated publication and user community engagement track record.
   -	Wetlands International is a global leader in mangrove conservation and restoration and coordinating member of the GMA, with expertise in specification and dissemination of remote sensing products and advocacy on policy.
 
-RAMM is implemented over the [Global Mangrove Watch (GMW)](https://www.globalmangrovewatch.org/) baseline extent (currently 2020) in a two stage per pixel approach, designed to maximize efficiency. 
+RAMM is implemented over the <a href="https://www.globalmangrovewatch.org/" target="_blank">Global Mangrove Watch (GMW)</a> baseline extent (currently 2020) in a two stage per pixel approach, designed to maximize efficiency. 
 The first stage is a simple rule-based approach based on thresholding of backscatter value and difference from the previous year’s median backscatter value, which reduces effects of seasonal and tidal variability and radar speckle. 
 The thresholds are designed to minimize false negatives (i.e. capture all possible mangrove loss).
 The second stage is a 1-Dimensional Convolutional Neural Network (1D-CNN) that is trained on a dataset of confirmed alerts and false positives (both produced by GMW).
 The integration of false positives into the training dataset encourages the model to recognise and flag falsely identified alerts provided by the rule-based first stage as deep learning algorithms are known to extract fine-grained patterns between domain distributions. 
 
 
-
-- Andrew Dean - [Hatfield Consultants](https://hatfieldgroup.com)
-- [Benjamin Smith](https://github.com/bnjam) - [Hatfield Consultants](https://hatfieldgroup.com)
-- [Pete Bunting](https://github.com/petebunting) - [Aberystwyth University](https://www.aber.ac.uk/en/)
-- [Dr. Victor Tang](https://github.com/weigangtang) - [Hatfield Consultants](https://hatfieldgroup.com)
-- [Lammert Hildarides](https://github.com/lhilarides) - [Wetlands International](https://www.wetlands.org)
-- Frank Martin Seifert - [European Space Agency (ESA)](https://www.esa.int)
+- Andrew Dean - <a href="https://hatfieldgroup.com" target="_blank">Hatfield Consultants</a>
+- Benjamin Smith - <a href="https://hatfieldgroup.com" target="_blank">Hatfield Consultants</a>
+- Pete Bunting - <a href="https://www.aber.ac.uk/en/" target="_blank">Aberystwyth University</a>
+- Dr. Victor Tang - <a href="https://hatfieldgroup.com" target="_blank">Hatfield Consultants</a>
+- Lammert Hildarides - <a href="https://www.wetlands.org" target="_blank">Wetlands International</a>
+- Frank Martin Seifert - <a href="https://www.esa.int" target="_blank">European Space Agency (ESA)</a>
 
 ---
 
 ## Platform
 
 With an Open Call with the European Space Agency (ESA),
-funding was provided to develop the RAMM platform on [CREODIAS](https://creodias.eu/).
+funding was provided to develop the RAMM platform on <a href="https://creodias.eu/" target="_blank">CREODIAS</a>.
 CREODIAS is a cloud-based platform that provides access to
-[Copernicus data](https://creodias.eu/eodata/all-sources/) and processing capabilities.
+<a href="https://creodias.eu/eodata/all-sources/" target="_blank">Copernicus data</a> and processing capabilities.
 The platform is built on OpenStack technologies and provides
 a development environment for users to interact with the data
 and processing capabilities.
@@ -52,6 +51,7 @@ The development of RAMM is focused on two demonstration areas: Guinea Bissau and
 >
 <img src="public/guinea-bissau-hatfield-map.png" alt="guinea_bissau" width="50%">
 </div>
+<br />
 
 ~7 to 9% of the country's total land and 86% of the
 coastline are covered by mangroves. 
@@ -72,11 +72,10 @@ for mangrove change in Africa.
 >
     <img src="public/north-kalimantan-hatfield-map.png" alt="north_kalimantan" width="50%">
 </div>
+<br />
 
-North Kalimantan is a province in Indonesia that is
-located on the island of Borneo.
-High levels of mangrove loss and degradation in North Kalimantan, primarily due to land conversion for agriculture and aquaculture, as well as pollution.​
-Focus of many mangrove restoration initiatives by the Indonesian government and other IFIs​.
+High levels of mangrove loss and degradation in the province of North Kalimantan, Indonesia (which is located on the island of Borneo), primarily due to land conversion for agriculture and aquaculture, as well as pollution.​
+There is a particular focus of many mangrove restoration initiatives by the Indonesian government and other International Financial Institutions (IFIs).
 
 ## Mangrove Loss Alerting Algorithms
 
@@ -106,21 +105,21 @@ iterates through the following stages:
 
 The first stage thresholds are tuned by performing a sensitivity
 analysis across real-world data.
-The second stage CNN is trained with a dataset produced by GMW using
+The second stage CNN is trained with a dataset of derived alert points produced by GMW using
 their latest global mangrove extent map and Sentinel-1 data.
 
 ## Platform Architecture
 
 The RAMM platform is built on the following technologies:
 
-- [CREODIAS](https://creodias.eu/): The cloud-based platform that provides access to Copernicus data.
-- [S3](https://aws.amazon.com/s3/): The object storage service used to store the pipeline outputs.
-- [OpenStack](https://www.openstack.org/): The underlying technology offered by CloudFerro for CREODIAS.
-- [REST API](https://restfulapi.net/): The API is used to interact with the platform.
-- [RabbitMQ](https://www.rabbitmq.com/): The message broker used to manage the pipeline.
-- [AMQP](https://www.amqp.org/) is the protocol used by RabbitMQ.
-- [Docker](https://www.docker.com/): The containerization technology used to package the pipeline.
-- [KEDA](https://keda.sh/): The Kubernetes Event-Driven Autoscaler used to scale the pipeline.
+- <a href="https://creodias.eu/" target="_blank">CREODIAS</a>: The cloud-based platform that provides access to Copernicus data.
+- <a href="https://aws.amazon.com/s3/" target="_blank">S3</a>: The object storage service used to store the pipeline outputs.
+- <a href="https://www.openstack.org/" target="_blank">OpenStack</a>: The underlying technology offered by CloudFerro for CREODIAS.
+- <a href="https://restfulapi.net/" target="_blank">REST API</a>: The API is used to interact with the platform.
+- <a href="https://www.rabbitmq.com/" target="_blank">RabbitMQ</a>: The message broker used to manage the pipeline.
+- <a href="https://www.amqp.org/" target="_blank">AMQP</a> is the protocol used by RabbitMQ.
+- <a href="https://www.docker.com/" target="_blank">Docker</a>: The containerization technology used to package the pipeline.
+- <a href="https://keda.sh/" target="_blank">KEDA</a>: The Kubernetes Event-Driven Autoscaler used to scale the pipeline.
 
 The platform is designed to be scalable and flexible to allow for
 the analysis of the entire global mangrove extent.
