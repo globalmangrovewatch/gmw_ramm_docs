@@ -4,19 +4,18 @@
 
 Global Mangrove Watch (GMW) publishes annual global data of the extent of mangrove forests and since 2019 a mangrove deforestation alert system using Copernicus Sentinel-2 imagery (Bunting et al. 2023). The optical image alert system is limited by cloud cover, often delaying the detection of mangrove loss and diminishing its impact for mangrove conservation. Sentinel-1 Synthetic Aperture Radar (SAR) penetrates cloud cover and offers potential to provide consistent monthly alerts. However, in coastal regions analytical methods must address the complex interaction of the SAR signal with mangrove canopy and water.
 
-- [Radar Alerts for Mangrove Monitoring (RAMM)](#radar-alerts-for-mangrove-monitoring-ramm)
-  - [Platform](#platform)
-  - [Demonstration Areas](#demonstration-areas)
-    - [Guinea Bissau](#guinea-bissau)
-    - [North Kalimantan, Indonesia](#north-kalimantan-indonesia)
-  - [Mangrove Loss Alerting Algorithms](#mangrove-loss-alerting-algorithms)
-  - [Platform Architecture](#platform-architecture)
+The consortium combines the expertise, experience, and leadership positions of three organizations – an environmental EO application development company (Hatfield), champion user (DGES/GMW), and early adopter (Wetlands International):
+  -	Hatfield provides deep project management expertise, experience in remote sensing and mangrove assessment and monitoring, cloud platform exploitation, and engagement with the user community including IFIs.
+  -	DGES is the technical lead for GMW and provides deep scientific and technical expertise in remote sensing, mangrove assessment and monitoring, and computer science with a demonstrated publication and user community engagement track record.
+  -	Wetlands International is a global leader in mangrove conservation and restoration and coordinating member of the GMA, with expertise in specification and dissemination of remote sensing products and advocacy on policy.
 
 RAMM is implemented over the [Global Mangrove Watch (GMW)](https://www.globalmangrovewatch.org/) baseline extent (currently 2020) in a two stage per pixel approach, designed to maximize efficiency. 
 The first stage is a simple rule-based approach based on thresholding of backscatter value and difference from the previous year’s median backscatter value, which reduces effects of seasonal and tidal variability and radar speckle. 
 The thresholds are designed to minimize false negatives (i.e. capture all possible mangrove loss).
 The second stage is a 1-Dimensional Convolutional Neural Network (1D-CNN) that is trained on a dataset of confirmed alerts and false positives (both produced by GMW).
 The integration of false positives into the training dataset encourages the model to recognise and flag falsely identified alerts provided by the rule-based first stage as deep learning algorithms are known to extract fine-grained patterns between domain distributions. 
+
+
 
 - Andrew Dean - [Hatfield Consultants](https://hatfieldgroup.com)
 - [Benjamin Smith](https://github.com/bnjam) - [Hatfield Consultants](https://hatfieldgroup.com)
@@ -44,12 +43,20 @@ The development of RAMM is focused on two demonstration areas: Guinea Bissau and
 
 ### Guinea Bissau
 
-![guinea_bissau](public/guinea-bissau-hatfield-map.png)
+  
+<div
+    style="
+        justify-content: center;
+        display: flex;
+        "
+>
+<img src="public/guinea-bissau-hatfield-map.png" alt="guinea_bissau" width="50%">
+</div>
 
 ~7 to 9% of the country's total land and 86% of the
 coastline are covered by mangroves. 
-As a byproduct of land conversation for rice 
-algriculture and coastal development, mangroves are
+As a byproduct of land conversion for rice 
+agriculture and coastal development, mangroves are
 experiencing loss and degradation.
 
 Guinea Bissau has been identified by GMW as a hot-spot 
@@ -57,10 +64,19 @@ for mangrove change in Africa.
 
 ### North Kalimantan, Indonesia
 
-![north_kalimantan](public/north-kalimantan-hatfield-map.png)
+<div
+    style="
+        justify-content: center;
+        display: flex;
+        "
+>
+    <img src="public/north-kalimantan-hatfield-map.png" alt="north_kalimantan" width="50%">
+</div>
 
 North Kalimantan is a province in Indonesia that is
 located on the island of Borneo.
+High levels of mangrove loss and degradation in North Kalimantan, primarily due to land conversion for agriculture and aquaculture, as well as pollution.​
+Focus of many mangrove restoration initiatives by the Indonesian government and other IFIs​.
 
 ## Mangrove Loss Alerting Algorithms
 
